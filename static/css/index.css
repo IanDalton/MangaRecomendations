@@ -1,0 +1,25 @@
+/* Hide synopsis by default, using opacity and visibility for a smooth transition */
+.manga-card .synopsis {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease, max-height 1s ease;
+    max-height: 0; /* Start with 0 to keep it hidden */
+    overflow: hidden;
+}
+
+/* Show synopsis when hovering over the card */
+.manga-card:hover .synopsis {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px; /* Adjust as needed to fit content */
+}
+
+/* Initial state of the card */
+.manga-card {
+    transition: transform 0.3s ease; /* Only apply to transform */
+}
+
+/* Optional: Expand card a bit on hover to draw attention */
+.manga-card:hover {
+    transform: scale(1.05);
+}
